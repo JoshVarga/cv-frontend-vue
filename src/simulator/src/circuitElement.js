@@ -154,7 +154,7 @@ export default class CircuitElement {
     /**
      * To generate JSON-safe data that can be loaded
      * @memberof CircuitElement
-     * @return {JSON} - the data to be saved
+     * @return {object} - the data to be saved
      */
     saveObject() {
         var data = {
@@ -168,15 +168,16 @@ export default class CircuitElement {
             customData: this.customSave(),
         }
 
-        if (this.canShowInSubcircuit)
+        if (this.canShowInSubcircuit) {
             data.subcircuitMetadata = this.subcircuitMetadata
+        }
         return data
     }
 
     /**
      * Always overriden
      * @memberof CircuitElement
-     * @return {JSON} - the data to be saved
+     * @return {object} - the data to be saved
      */
     // eslint-disable-next-line class-methods-use-this
     customSave() {
@@ -853,6 +854,7 @@ export default class CircuitElement {
 
     /**
      * Helper Function to process verilog
+     * @return {object}
      */
     processVerilog() {
         // Output count used to sanitize output
@@ -957,7 +959,7 @@ export default class CircuitElement {
 
     /**
      * Helper Function to generate verilog
-     * @return {JSON}
+     * @return {string}
      */
     generateVerilog() {
         // Example: and and_1(_out, _out, _Q[0]);

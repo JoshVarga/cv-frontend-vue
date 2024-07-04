@@ -57,6 +57,7 @@ import TTY from './sequential/TTY'
 import ForceGate from './testbench/ForceGate'
 import TB_Input from './testbench/testbenchInput'
 import TB_Output from './testbench/testbenchOutput'
+import UnsignedComparator from './modules/UnsignedComparator'
 import verilogMultiplier from './modules/verilogMultiplier'
 import verilogDivider from './modules/verilogDivider'
 import verilogPower from './modules/verilogPower'
@@ -130,6 +131,7 @@ export default function setupModules() {
         TB_Input,
         TB_Output,
         ForceGate,
+        UnsignedComparator,
     }
     Object.assign(modules, moduleSet)
 }

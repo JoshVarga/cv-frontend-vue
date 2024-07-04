@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+  <path fill="#fff" stroke="#000" paint-order="fill stroke markers" d="M5 5h40v40H5V5z" stroke-miterlimit="10" stroke-width="3"/>
+  <ellipse style="fill: rgb(0, 216, 0);" cx="3.1" cy="13.954" rx="2.912" ry="2.853"/>
+  <ellipse style="fill: rgb(0, 216, 0);" cx="3.092" cy="34.454" rx="2.912" ry="2.853"/>
+  <ellipse style="fill: rgb(0, 216, 0);" cx="46.585" cy="13.185" rx="2.912" ry="2.853"/>
+  <ellipse style="fill: rgb(0, 216, 0);" cx="46.806" cy="38.569" rx="2.912" ry="2.853"/>
+  <ellipse style="fill: rgb(0, 216, 0);" cx="46.562" cy="25.845" rx="2.912" ry="2.853"/>
+  <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 14px;" x="9.587" y="17.764" transform="matrix(0.738955020904541, 0, 0, 1.2736289501190186, 1.6730799674987793, 7.441009044647217)">COMP</text>
+</svg>

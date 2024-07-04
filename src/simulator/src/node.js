@@ -142,12 +142,12 @@ var uniqueIdCounter = 10
  * @param {number} y - y coord of Node
  * @param {number} type - type of node
  * @param {CircuitElement} parent - parent element
- * @param {?number} bitWidth - the bits of node in input and output nodes
+ * @param {number} bitWidth - the bits of node in input and output nodes
  * @param {string=} label - label for a node
  * @category node
  */
 export default class Node {
-    constructor(x, y, type, parent, bitWidth = undefined, label = '') {
+    constructor(x, y, type, parent, bitWidth = 0, label = '') {
         // Should never raise, but just in case
         if (isNaN(x) || isNaN(y)) {
             this.delete()
@@ -166,7 +166,7 @@ export default class Node {
             this.parent.nodeList.push(this)
         }
 
-        if (bitWidth == undefined) {
+        if (bitWidth == 0) {
             this.bitWidth = parent.bitWidth
         } else {
             this.bitWidth = bitWidth
@@ -212,6 +212,7 @@ export default class Node {
             time: undefined,
             index: undefined,
         }
+        this.verilogLabel = undefined
     }
 
     /**
