@@ -11,7 +11,7 @@ import { colors } from '../themer/themer'
 import { layoutModeGet, toggleLayoutMode } from '../layoutMode'
 import { verilogModeGet } from '../Verilog2CV'
 import domtoimage from 'dom-to-image'
-import '../../vendor/canvas2svg'
+import canvasToSvg from "canvas-to-svg";
 import { useProjectStore } from '#/store/projectStore'
 import { provideProjectName } from '#/components/helpers/promptComponent/PromptComponent.vue'
 import { UpdateProjectDetail } from '#/components/helpers/createNewProject/UpdateProjectDetail.vue'
@@ -186,7 +186,7 @@ export function generateImage(
 
     // If SVG, create SVG context - using canvas2svg here
     if (imgType === 'svg') {
-        simulationArea.context = new C2S(width, height)
+        simulationArea.context = new canvasToSvg(width, height)
         resolution = 1
     } else if (imgType !== 'png') {
         transparent = false
@@ -248,7 +248,7 @@ export function generateImage(
     // If circuit is to be downloaded, download, other wise return dataURL
     if (down) {
         if (imgType === 'svg') {
-            const mySerializedSVG = simulationArea.context.getSerializedSvg() // true here, if you need to convert named to numbered entities.
+            const mySerializedSVG = simulationArea.context.getSerializedSvg()
             download(`${globalScope.name}.svg`, mySerializedSVG)
         } else {
             downloadAsImg(globalScope.name, imgType)
